@@ -18,6 +18,7 @@ class ViewController: UIViewController {
         return label
     }()
     
+    //뷰가 생성되었을때
     override func viewDidLoad() {
         
         super.viewDidLoad()
