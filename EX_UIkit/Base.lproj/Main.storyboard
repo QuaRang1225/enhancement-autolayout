@@ -13,25 +13,58 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EX_UIkit" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C5h-1t-50N">
-                                <rect key="frame" x="165" y="411" width="60" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HellowWorld" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="C5h-1t-50N">
+                                <rect key="frame" x="118" y="411" width="154" height="34"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <color key="tintColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" systemColor="systemGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="FNg-1I-9lq">
+                                <rect key="frame" x="159" y="297" width="75" height="35"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="doSomething:" destination="BYZ-38-t0r" eventType="touchUpInside" id="089-6N-Ut8"/>
+                                    <action selector="touchdown:" destination="BYZ-38-t0r" eventType="touchDown" id="04H-2s-Zyp"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" id="q8E-Ck-Dme">
+                                <rect key="frame" x="87" y="180" width="216" height="30"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="reN-R0-GxE"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderchanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="y66-W8-KfF"/>
+                                </connections>
+                            </slider>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="E0z-LC-Yq5">
+                                <rect key="frame" x="171" y="612" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <connections>
+                                    <action selector="onSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="j9l-YD-soz"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.0" green="0.029822154971226082" blue="0.7240752995628672" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="FNg-1I-9lq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7U2-UA-VWS"/>
+                            <constraint firstItem="C5h-1t-50N" firstAttribute="top" secondItem="FNg-1I-9lq" secondAttribute="bottom" constant="79" id="IKQ-ck-oes"/>
+                            <constraint firstItem="E0z-LC-Yq5" firstAttribute="centerX" secondItem="C5h-1t-50N" secondAttribute="centerX" id="XF2-Pc-LFj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="E0z-LC-Yq5" secondAttribute="bottom" constant="219" id="ncE-Bv-FWD"/>
+                        </constraints>
                     </view>
                     <connections>
-                        <outlet property="HelloLabel" destination="C5h-1t-50N" id="bIt-C9-auS"/>
-                        <outlet property="helloLabel" destination="C5h-1t-50N" id="8Ro-2D-y7P"/>
+                        <outlet property="helloLabel" destination="C5h-1t-50N" id="H3b-M2-oaS"/>
+                        <outlet property="helloView" destination="8bC-Xf-vdC" id="GzU-MC-lVb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -43,8 +76,8 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
