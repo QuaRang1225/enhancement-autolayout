@@ -13,7 +13,7 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EX_UIkit" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -45,13 +45,22 @@
                                     <action selector="sliderchanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="y66-W8-KfF"/>
                                 </connections>
                             </slider>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="E0z-LC-Yq5">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="E0z-LC-Yq5">
                                 <rect key="frame" x="171" y="612" width="51" height="31"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <connections>
                                     <action selector="onSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="j9l-YD-soz"/>
                                 </connections>
                             </switch>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PzW-8Q-M1P">
+                                <rect key="frame" x="75" y="453" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="fef-FD-WKJ" appends="YES" id="DD3-G4-QfK"/>
+                                </connections>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.0" green="0.029822154971226082" blue="0.7240752995628672" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -59,15 +68,20 @@
                             <constraint firstItem="FNg-1I-9lq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7U2-UA-VWS"/>
                             <constraint firstItem="C5h-1t-50N" firstAttribute="top" secondItem="FNg-1I-9lq" secondAttribute="bottom" constant="79" id="IKQ-ck-oes"/>
                             <constraint firstItem="E0z-LC-Yq5" firstAttribute="centerX" secondItem="C5h-1t-50N" secondAttribute="centerX" id="XF2-Pc-LFj"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="E0z-LC-Yq5" secondAttribute="bottom" constant="219" id="ncE-Bv-FWD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="helloLabel" destination="C5h-1t-50N" id="H3b-M2-oaS"/>
                         <outlet property="helloView" destination="8bC-Xf-vdC" id="GzU-MC-lVb"/>
+                        <outlet property="rectangle" destination="PzW-8Q-M1P" id="Txe-Uq-Kzi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="fef-FD-WKJ">
+                    <connections>
+                        <action selector="longGesture:" destination="BYZ-38-t0r" id="9dN-jR-JLG"/>
+                    </connections>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
         </scene>
@@ -75,6 +89,9 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

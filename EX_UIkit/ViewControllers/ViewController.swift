@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     
     //버튼 이벤트
@@ -15,11 +15,18 @@ class ViewController: UIViewController {
         print("눌렀제~")
     }
     
+    //이걸 추가해주면 한 컴포넌트에서 두가지의 제스쳐 사용가능
+    //UIGestureRecognizerDelegate 프로토콜 준수
+    //viewDidLoad에서 델리게이트 설정
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
     
     //슬라이드 이벤트
     @IBAction func sliderchanged(_ slider: UISlider) {
         print("슬라이드됨\(slider.value)")
     }
+    
     //스위치 이벤트
     @IBAction func onSwitch(_ switchButton: UISwitch) {
         print(switchButton.isOn ? "스위치 켜짐":"스위치 꺼짐")
@@ -34,11 +41,23 @@ class ViewController: UIViewController {
         print("버튼 눌림")
     }
     
+    @IBOutlet weak var rectangle: UIView!
+    
+    @IBAction func longGesture(_ sender: UILongPressGestureRecognizer) {
+        if sender.state == .began{
+            rectangle.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
+        }else if sender.state == .ended{
+            rectangle.transform = .identity
+        }
+       
+    }
     @IBOutlet var helloView: UIView!
     @IBOutlet weak var helloLabel: UILabel!
     
     
+
     var offset:CGPoint?
+    
     //뷰가 생성되었을때
     override func viewDidLoad() {
         
@@ -47,6 +66,11 @@ class ViewController: UIViewController {
         view.addSubview(titleButton)
         view.isUserInteractionEnabled = true
         view.isMultipleTouchEnabled = true
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panned))
+        rectangle.isUserInteractionEnabled = true
+        rectangle.addGestureRecognizer(panGesture)
+        panGesture.delegate = self
 //        view.backgroundColor = .blue
 //        view.addSubview(titleLabel)
 ////        view.addSubview(helloLabel)
@@ -54,6 +78,21 @@ class ViewController: UIViewController {
 //        titleLabel.translatesAutoresizingMaskIntoConstraints = false    //위치고정 false
 //        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true    //가로세로 중앙에 맞춤
 //        titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+    }
+   
+    @objc func panned(gesture:UIPanGestureRecognizer){
+        
+        // UIPanGestureRecognizer에서 이동한 거리를 가져옴
+           let translation = gesture.translation(in: rectangle)
+           
+           // gestureLabel의 현재 origin에 이동한 거리를 더해 위치를 업데이트함
+       
+        rectangle.frame.origin.x += translation.x
+        rectangle.frame.origin.y += translation.y
+           
+           // 이동한 거리를 초기화함 (다음 이동을 위해)
+           gesture.setTranslation(.zero, in: rectangle)
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
