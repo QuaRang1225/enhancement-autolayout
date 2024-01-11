@@ -10,10 +10,80 @@ import UIKit
 class ViewController: UIViewController, UIGestureRecognizerDelegate {
 
     
+    @IBOutlet weak var rectangle: UIView!
+    @IBOutlet var helloView: UIView!
+    @IBOutlet weak var helloLabel: UILabel!
+
+    var offset:CGPoint?
+    
+    //뷰가 생성되었을때
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        view.addSubview(titleLabel)
+        view.addSubview(titleButton)
+        view.isUserInteractionEnabled = true
+        view.isMultipleTouchEnabled = true
+        
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panned))
+        rectangle.isUserInteractionEnabled = true
+        rectangle.addGestureRecognizer(panGesture)
+        panGesture.delegate = self
+        
+    }
+   
+
+}
+extension ViewController{
+    
+    //---------------컴포넌트-------------------
+
+    var titleLabel:UILabel{
+        let label = UILabel()
+        label.text = "안뇽"
+        label.font = .boldSystemFont(ofSize: 50)
+        label.textAlignment = .center
+        label.textColor = .white
+        label.frame = CGRect(x: 20, y: 20, width: 100, height: 100)
+        return label
+    }
+    
+    
+    var titleButton:UIButton{
+        let button = UIButton()
+        button.setTitle("눌러바~", for: .normal)
+        //하이라이트 모드 눌렀을때
+        button.setTitle("눌러짐~", for: .highlighted)
+        button.frame = CGRect(x: 80, y: 80, width: 100, height: 100)
+        //버튼 이벤트
+        button.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
+        return button
+    }
+    
+    
+    //------------------이벤트---------------------
     //버튼 이벤트
     @objc func actionButton(button:UIButton){
         print("눌렀제~")
     }
+    
+    //드래그로 컴포넌트 움직이는 이벤트
+    @objc func panned(gesture:UIPanGestureRecognizer){
+        
+        // UIPanGestureRecognizer에서 이동한 거리를 가져옴
+           let translation = gesture.translation(in: rectangle)
+           
+           // gestureLabel의 현재 origin에 이동한 거리를 더해 위치를 업데이트함
+       
+        rectangle.frame.origin.x += translation.x
+        rectangle.frame.origin.y += translation.y
+           
+           // 이동한 거리를 초기화함 (다음 이동을 위해)
+           gesture.setTranslation(.zero, in: rectangle)
+        
+    }
+    
+    //----------------액션----------------------
     
     //이걸 추가해주면 한 컴포넌트에서 두가지의 제스쳐 사용가능
     //UIGestureRecognizerDelegate 프로토콜 준수
@@ -41,8 +111,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         print("버튼 눌림")
     }
     
-    @IBOutlet weak var rectangle: UIView!
-    
+    //길게 눌렀을때 이벤트
     @IBAction func longGesture(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began{
             rectangle.transform = CGAffineTransform(scaleX: 1.25, y: 1.25)
@@ -51,50 +120,8 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
         }
        
     }
-    @IBOutlet var helloView: UIView!
-    @IBOutlet weak var helloLabel: UILabel!
     
-    
-
-    var offset:CGPoint?
-    
-    //뷰가 생성되었을때
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        view.addSubview(titleLabel)
-        view.addSubview(titleButton)
-        view.isUserInteractionEnabled = true
-        view.isMultipleTouchEnabled = true
-        
-        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panned))
-        rectangle.isUserInteractionEnabled = true
-        rectangle.addGestureRecognizer(panGesture)
-        panGesture.delegate = self
-//        view.backgroundColor = .blue
-//        view.addSubview(titleLabel)
-////        view.addSubview(helloLabel)
-//        // Do any additional setup after loading the view.
-//        titleLabel.translatesAutoresizingMaskIntoConstraints = false    //위치고정 false
-//        titleLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true    //가로세로 중앙에 맞춤
-//        titleLabel.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-    }
-   
-    @objc func panned(gesture:UIPanGestureRecognizer){
-        
-        // UIPanGestureRecognizer에서 이동한 거리를 가져옴
-           let translation = gesture.translation(in: rectangle)
-           
-           // gestureLabel의 현재 origin에 이동한 거리를 더해 위치를 업데이트함
-       
-        rectangle.frame.origin.x += translation.x
-        rectangle.frame.origin.y += translation.y
-           
-           // 이동한 거리를 초기화함 (다음 이동을 위해)
-           gesture.setTranslation(.zero, in: rectangle)
-        
-    }
-    
+    //------------------------- 뷰 상테 -----------------------
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
 //        super.touchesBegan(touches, with: event)
         
@@ -131,30 +158,6 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         print("전화나 홈버튼에 의해 취소됨")
     }
-
-
-}
-extension ViewController{
-    
-    var titleLabel:UILabel{
-        let label = UILabel()
-        label.text = "안뇽"
-        label.font = .boldSystemFont(ofSize: 50)
-        label.textAlignment = .center
-        label.textColor = .white
-        label.frame = CGRect(x: 20, y: 20, width: 100, height: 100)
-        return label
-    }
     
     
-    var titleButton:UIButton{
-        let button = UIButton()
-        button.setTitle("눌러바~", for: .normal)
-        //하이라이트 모드 눌렀을때
-        button.setTitle("눌러짐~", for: .highlighted)
-        button.frame = CGRect(x: 80, y: 80, width: 100, height: 100)
-        //버튼 이벤트
-        button.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
-        return button
-    }
 }

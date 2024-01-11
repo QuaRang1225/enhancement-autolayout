@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		813C55F02B4FE10C00427BEB /* AutoLayoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813C55EF2B4FE10C00427BEB /* AutoLayoutViewController.swift */; };
 		813F520B2A57A35300833427 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F520A2A57A35300833427 /* AppDelegate.swift */; };
 		813F520D2A57A35300833427 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F520C2A57A35300833427 /* SceneDelegate.swift */; };
 		813F520F2A57A35300833427 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F520E2A57A35300833427 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		813C55EF2B4FE10C00427BEB /* AutoLayoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoLayoutViewController.swift; sourceTree = "<group>"; };
 		813F52072A57A35300833427 /* EX_UIkit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EX_UIkit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		813F520A2A57A35300833427 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		813F520C2A57A35300833427 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		813C55F12B4FE15500427BEB /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				813F52102A57A35300833427 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		813F51FE2A57A35300833427 = {
 			isa = PBXGroup;
 			children = (
@@ -101,10 +111,10 @@
 		813F52092A57A35300833427 /* EX_UIkit */ = {
 			isa = PBXGroup;
 			children = (
+				813C55F12B4FE15500427BEB /* Storyboard */,
 				81D7B1C42A5CED2A00D5AACD /* ViewControllers */,
 				813F520A2A57A35300833427 /* AppDelegate.swift */,
 				813F520C2A57A35300833427 /* SceneDelegate.swift */,
-				813F52102A57A35300833427 /* Main.storyboard */,
 				813F52162A57A35400833427 /* Assets.xcassets */,
 				813F52182A57A35400833427 /* LaunchScreen.storyboard */,
 				813F521B2A57A35400833427 /* Info.plist */,
@@ -134,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				813F520E2A57A35300833427 /* ViewController.swift */,
+				813C55EF2B4FE10C00427BEB /* AutoLayoutViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -202,7 +213,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					813F52062A57A35300833427 = {
 						CreatedOnToolsVersion = 14.3.1;
@@ -273,6 +284,7 @@
 				813F520B2A57A35300833427 /* AppDelegate.swift in Sources */,
 				813F520D2A57A35300833427 /* SceneDelegate.swift in Sources */,
 				813F52152A57A35300833427 /* EX_UIkit.xcdatamodeld in Sources */,
+				813C55F02B4FE10C00427BEB /* AutoLayoutViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
