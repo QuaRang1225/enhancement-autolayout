@@ -247,10 +247,10 @@
             </objects>
             <point key="canvasLocation" x="659" y="-675"/>
         </scene>
-        <!--View Controller-->
+        <!--Dynamic Table View Controller-->
         <scene sceneID="2er-H8-uFN">
             <objects>
-                <viewController id="QZj-AB-9zG" sceneMemberID="viewController">
+                <viewController id="QZj-AB-9zG" customClass="DynamicTableViewController" customModule="EX_UIkit" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Apg-8C-1sF">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -269,6 +269,9 @@
                             <constraint firstAttribute="bottom" secondItem="utO-zD-Wam" secondAttribute="bottom" id="n57-ol-eTu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="myTableView" destination="utO-zD-Wam" id="1Fa-Bv-bmL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qXE-4L-lK4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

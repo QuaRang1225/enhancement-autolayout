@@ -19,6 +19,7 @@
 		813F522F2A57A35400833427 /* EX_UIkitUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F522E2A57A35400833427 /* EX_UIkitUITests.swift */; };
 		813F52312A57A35400833427 /* EX_UIkitUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 813F52302A57A35400833427 /* EX_UIkitUITestsLaunchTests.swift */; };
 		816EAA792B51380F00FFE244 /* DynamicTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816EAA782B51380F00FFE244 /* DynamicTableViewController.swift */; };
+		816EAA7B2B51638000FFE244 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816EAA7A2B51638000FFE244 /* MyTableViewCell.swift */; };
 		81A7B2072B51321500809993 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81A7B2062B51321500809993 /* MyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		813F522E2A57A35400833427 /* EX_UIkitUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EX_UIkitUITests.swift; sourceTree = "<group>"; };
 		813F52302A57A35400833427 /* EX_UIkitUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EX_UIkitUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		816EAA782B51380F00FFE244 /* DynamicTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicTableViewController.swift; sourceTree = "<group>"; };
+		816EAA7A2B51638000FFE244 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
 		81A7B2062B51321500809993 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,6 +153,7 @@
 				813F520E2A57A35300833427 /* ViewController.swift */,
 				813C55EF2B4FE10C00427BEB /* AutoLayoutViewController.swift */,
 				816EAA782B51380F00FFE244 /* DynamicTableViewController.swift */,
+				816EAA7A2B51638000FFE244 /* MyTableViewCell.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				816EAA7B2B51638000FFE244 /* MyTableViewCell.swift in Sources */,
 				813F520F2A57A35300833427 /* ViewController.swift in Sources */,
 				813F520B2A57A35300833427 /* AppDelegate.swift in Sources */,
 				813F520D2A57A35300833427 /* SceneDelegate.swift in Sources */,

@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="245" id="erh-Su-gwW">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="245" id="erh-Su-gwW" customClass="MyTableViewCell" customModule="EX_UIkit" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="504" height="245"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="erh-Su-gwW" id="CrQ-Cf-wzd">
@@ -47,8 +47,8 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="dty-St-3s1">
-                        <rect key="frame" x="8" y="210" width="70" height="20"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dty-St-3s1">
+                        <rect key="frame" x="8" y="210" width="90" height="20"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0F5-wW-4Af">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
@@ -60,7 +60,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="heart.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uss-tC-bfH">
-                                <rect key="frame" x="25" y="0.0" width="20" height="20"/>
+                                <rect key="frame" x="35" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="WZE-zV-lHq"/>
                                     <constraint firstAttribute="width" constant="20" id="shC-iw-s8w"/>
@@ -69,7 +69,7 @@
                                 <buttonConfiguration key="configuration" style="plain" image="hand.thumbsup.fill" catalog="system"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sL7-NX-VBK">
-                                <rect key="frame" x="50" y="0.0" width="20" height="20"/>
+                                <rect key="frame" x="70" y="0.0" width="20" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="9oj-q7-S6A"/>
                                     <constraint firstAttribute="height" constant="20" id="gQn-gY-Eav"/>
@@ -95,6 +95,10 @@
                     <constraint firstItem="ua4-jD-639" firstAttribute="top" secondItem="CrQ-Cf-wzd" secondAttribute="top" constant="8" id="zYu-xu-YoH"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="userContentLabel" destination="gOP-Qh-WsO" id="zeH-No-Hpu"/>
+                <outlet property="userProfileImage" destination="ua4-jD-639" id="gSE-K6-po6"/>
+            </connections>
             <point key="canvasLocation" x="25.954198473282442" y="234.1549295774648"/>
         </tableViewCell>
     </objects>
