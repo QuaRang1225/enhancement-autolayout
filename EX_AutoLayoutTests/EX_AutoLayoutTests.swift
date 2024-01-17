@@ -6,9 +6,9 @@
 //
 
 import XCTest
-@testable import EX_UIkit
+@testable import EX_AutoLayout
 
-final class EX_UIkitTests: XCTestCase {
+final class EX_AutoLayoutTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
