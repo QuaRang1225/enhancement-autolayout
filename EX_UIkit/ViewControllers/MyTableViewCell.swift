@@ -11,7 +11,7 @@ import UIKit
 class MyTableViewCell:UITableViewCell{
     
     @IBOutlet weak var userProfileImage:UIImageView!
-    @IBOutlet weak var userContentLabel: UILabel!
+    @IBOutlet weak var userContentLabel:UILabel!
     
     //셀이 렌더링(그릴때) 될때
     override func awakeFromNib() {
