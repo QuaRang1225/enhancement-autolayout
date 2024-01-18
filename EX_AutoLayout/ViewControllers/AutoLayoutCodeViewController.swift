@@ -21,8 +21,8 @@ class AutoLayoutCodeViewController:UIViewController{
     
     var thirdView:MyCircleView = {
         let view = MyCircleView()
-        view.backgroundColor = .yellow
-        view.translatesAutoresizingMaskIntoConstraints = false
+//        view.backgroundColor = .yellow
+//        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     

@@ -11,6 +11,8 @@ class MyCircleView:UIView{
     override func layoutSubviews() {
         super.layoutSubviews()
         print("MyCircleView 호출")
+        self.backgroundColor = .yellow
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = self.frame.height/2
     }
 }
