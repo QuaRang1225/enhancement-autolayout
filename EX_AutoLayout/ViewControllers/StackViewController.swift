@@ -27,7 +27,6 @@ class StackViewController:UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         for bttnItem in phoneNumberButtons{
             bttnItem.addTarget(self, action: #selector (onNumberBttnClicked), for: .touchUpInside)
         }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Gkn-UO-6Q4">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BCs-Hq-uAQ">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -801,6 +801,51 @@
             </objects>
             <point key="canvasLocation" x="-3142.3255813953488" y="-1608.1545064377683"/>
         </scene>
+        <!--AutoLayoutCodeViewController-->
+        <scene sceneID="d1Y-Bu-NmJ">
+            <objects>
+                <viewController title="AutoLayoutCodeViewController" id="BCs-Hq-uAQ" customClass="AutoLayoutCodeViewController" customModule="EX_AutoLayout" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gFM-Si-KbM">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="3sF-6Q-eKp"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d3f-9C-Jmy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3964" y="-1761"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="jdr-bQ-f7O">
+            <objects>
+                <viewController id="eAY-dm-i7H" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EJA-sy-I7S">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PNk-d7-ahg">
+                                <rect key="frame" x="115" y="259" width="200" height="200"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="nI7-ga-vXN"/>
+                                    <constraint firstAttribute="width" constant="200" id="rEZ-xv-jTX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="YKw-Qq-0CE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="PNk-d7-ahg" firstAttribute="centerX" secondItem="EJA-sy-I7S" secondAttribute="centerX" id="8cS-Xb-NAn"/>
+                            <constraint firstItem="PNk-d7-ahg" firstAttribute="top" secondItem="YKw-Qq-0CE" secondAttribute="top" constant="200" id="xKk-xC-MBc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FWj-kJ-uYf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4635" y="-1762"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="DrT-Rp-2Yy">
@@ -880,6 +925,12 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
